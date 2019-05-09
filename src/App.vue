@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6" :key="product.id" v-for="product in products">
-                <product :product="product"></product>
+                <product v-on:add-to-cart="addToCart(product)" :product="product"></product>
             </div>
         </div>
     </div>
@@ -22,7 +22,14 @@
 
 		data() {
 			return {
-				products
+				products,
+				cart: []
+			}
+		},
+		methods: {
+			addToCart(product) {
+				//console.log(product);
+				this.cart.push(product);
 			}
 		}
 	}

@@ -5,7 +5,7 @@
 
         <p class="text-center text-muted card-text display-4">$ {{ Number(product.price).toFixed() }}</p>
 
-        <button class="btn btn-primary form-control">Ajouter au panier</button>
+        <button @click="$emit('add-to-cart', product)" class="btn btn-primary form-control">Ajouter au panier</button>
     </div>
 </div>
 </template>
