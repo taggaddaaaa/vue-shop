@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6" :key="product.id" v-for="product in products">
-                <product></product>
+                <product :product="product"></product>
             </div>
         </div>
     </div>
