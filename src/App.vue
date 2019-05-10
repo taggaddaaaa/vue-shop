@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6" :key="product.id" v-for="product in products">
-                <product v-on:add-to-cart="addToCart(product)" :product="product"></product>
+                <product :isInCart="isInCart(product)" v-on:add-to-cart="addToCart(product)" :product="product"></product>
             </div>
         </div>
     </div>
@@ -30,6 +30,12 @@
 			addToCart(product) {
 				//console.log(product);
 				this.cart.push(product);
+			},
+
+			isInCart(product) {
+				const item = this.cart.find(item => item.id === product.id)
+
+				return !!item;
 			}
 		}
 	}
