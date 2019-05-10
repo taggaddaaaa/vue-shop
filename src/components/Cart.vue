@@ -11,6 +11,7 @@
         <div class="card p-3 my-5">
             <h4 class="text-center">${{ total}}</h4>
         </div>
+        <button :disabled="items.length === 0" @click="$emit('pay')" class="btn btn-info form-control">Pay now</button>
     </div>
 
 </template>
